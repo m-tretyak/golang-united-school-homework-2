@@ -43,8 +43,8 @@ func circleAreaCalc(sideLen float64) float64 {
 }
 
 func CalcSquare(sideLen float64, sidesNum ShapeSides) float64 {
-	calc, err := areaCalcMap[sidesNum]
-	if err {
+	calc, found := areaCalcMap[sidesNum]
+	if !found {
 		return 0.0
 	}
 
